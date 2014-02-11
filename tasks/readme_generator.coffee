@@ -116,17 +116,36 @@ module.exports = (grunt) ->
           # console.log "there isnt a prefix #{prefix}"
           versions_found.push filename
       
-  
     if versions_found.length > 0
-      versions_found.sort(semver.rcompare)
-      latest = versions_found[versions_found.length - 1]
-    
       # returns the whole file name like v0.1.1.md
-      latest
+      sort_changelogs(
+        parse_changelogs(
+          prefix, versions_found))[-1..][0].filename
     else
       grunt.fail.fatal "No changelogs are present. Please write a changelog file or fix prefixes."
       false
 
+  # Use semver to sort an array of changelogs
+  sort_changelogs = (changelogs) ->
+    changelogs.sort (a,b) ->
+      semver.compare(a.version, b.version)
+
+  # Split an array of filenames into named parts
+  parse_changelogs = (prefix, filenames) ->
+    filenames.map (filename) ->
+      parse_changelog(prefix, filename)
+
+  # Split a changelog filename into named parts:
+  #   * The original filename
+  #   * A prefix (optional)
+  #   * A semantic version
+  #   * A whitelisted file extension
+  parse_changelog = (prefix, filename) ->
+    filename: filename
+    prefix: filename.substring(0, prefix.length)
+    version: filename.substring(prefix.length,
+      (filename.length - get_file_extension(filename).length ) - 1)
+    extension: get_file_extension(filename)
 
   generate_banner = (opts) ->
     if opts.informative then inform "Generating banner to place on the very top"
