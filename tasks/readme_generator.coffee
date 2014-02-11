@@ -7,6 +7,7 @@
 #
 "use strict"
 fs = require 'fs'
+semver = require 'semver'
 module.exports = (grunt) ->
   # helper functions
 
@@ -117,7 +118,7 @@ module.exports = (grunt) ->
       
   
     if versions_found.length > 0
-      versions_found.sort()
+      versions_found.sort(semver.rcompare)
       latest = versions_found[versions_found.length - 1]
     
       # returns the whole file name like v0.1.1.md
