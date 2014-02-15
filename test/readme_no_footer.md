@@ -175,10 +175,10 @@ This software is licensed under [MIT License](http://aponxi.mit-license.org/).
 
 You can find [all the changelogs here](/test/changelogs).
 
-### Latest changelog is from v0.1.0.md:
+### Latest changelog is from v0.10.0.md:
 
-#### v0.1.0 05/Jun/2013
-- V Prefix
+#### v0.10.0 11/Feb/2014
+- V prefix. A more recent version than v0.1.0.
 
 #### v0.1.01 05/Jun/2013
 - Added utf-8 encode/decode to prevent unicode decode errors, fixed #17

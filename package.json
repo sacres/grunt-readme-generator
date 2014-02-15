@@ -8,7 +8,7 @@
     "email": "aponxi@weaponxi.com",
     "url": "www.weaponxi.com"
   },
-   "keywords": [
+  "keywords": [
     "markdown",
     "md",
     "readme",
@@ -36,9 +36,7 @@
     "documentation-generator",
     "github-flavored-markdown",
     "gruntplugin"
-
   ],
-
   "repository": {
     "type": "git",
     "url": "git://github.com:aponxi/grunt-readme-generator.git"
@@ -65,5 +63,8 @@
   },
   "peerDependencies": {
     "grunt": "~0.4.1"
+  },
+  "dependencies": {
+    "semver": "~2.2.1"
   }
 }
