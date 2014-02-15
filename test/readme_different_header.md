@@ -22,12 +22,12 @@
              \____/\___|_| |_|\___|_|  \__,_|\__\___/|_|   
                                                            
                                                    
-# grunt-readme-generator 
+## grunt-readme-generator 
 [![Build Status](https://secure.travis-ci.org/aponxi/grunt-readme-generator.png?branch=master)](http://travis-ci.org/aponxi/grunt-readme-generator)
 
 > A grunt task to generate a dynamic readme.md from partial markdown files in readme folder. Specifically designed for GitHub projects!
 
-## Jump to Section
+### Jump to Section
 
 * [Options used to generate this readme file](#options-used-to-generate-this-readme-file)
 * [Installation](#installation)
@@ -41,20 +41,22 @@
 * [Tip Me ![](http://i.imgur.com/C0P9DIx.gif?1)](https://www.gittip.com/aponxi/)
 * [Donate Me! ![](http://i.imgur.com/2tqfhMO.png?1)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=VBUW4M9LKTR62)
 
-## Options used to generate this readme file
+### Options used to generate this readme file
 [[Back To Top]](#jump-to-section)
 
 ```js
 readme_generator: {
-  testing_anomallies: {
+  different_header: {
     options: {
       generate_changelog: true,
+      h1: "##",
+      h2: "###",
       has_travis: true,
-      output: "test/testing_anomallies.md",
+      output: "test/readme_different_header.md",
       table_of_contents: true,
       readme_folder: "test/readme",
       changelog_folder: "test/changelogs",
-      changelog_version_prefix: "",
+      changelog_version_prefix: "v",
       toc_extra_links: ["[Tip Me ![](http://i.imgur.com/C0P9DIx.gif?1)](https://www.gittip.com/aponxi/)", "[Donate Me! ![](http://i.imgur.com/2tqfhMO.png?1)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=VBUW4M9LKTR62)"],
       banner: "banner.md"
     },
@@ -71,7 +73,7 @@ readme_generator: {
 }
 ```
 
-## Installation
+### Installation
 [[Back To Top]](#jump-to-section)
 
 - via npm
@@ -86,7 +88,7 @@ npm install coffee-init
 git clone git://github.com/nox/coffee-init.git
 ```
 
-## Usage
+### Usage
 [[Back To Top]](#jump-to-section)
 
 ```javascript
@@ -97,7 +99,7 @@ coffee_init.awesome(); // "awesome"
 If the output's line is more than the maximum bytes, then the rest of the characters will be treated as if it's in the next line. Meaning that you can find a very long line split into two in the `output` array key. Right now the max char limit is `16384` bytes.
 
 
-## Options
+### Options
 [[Back To Top]](#jump-to-section)
 
 - `chained`: `bool`
@@ -108,7 +110,7 @@ If the output's line is more than the maximum bytes, then the rest of the charac
 
   `returnOutput` is also `true` by default. This is what returns the output in an array, parsing them line by line. I supply with this option because sometimes you might run a command that only returns server's IP address or sometimes you can run a command that just outputs very long lines and a very long text. I added the ability to opt out so that when unnecessary you might set it to false.
 
-## Example
+### Example
 [[Back To Top]](#jump-to-section)
 
 ```js
@@ -132,7 +134,7 @@ var regular = Array("ls","echo \"Works\"", "ls -lart");
 
 ```
 
-## Example Output
+### Example Output
 [[Back To Top]](#jump-to-section)
 
 That example outputs something long like this:
@@ -143,7 +145,7 @@ Coming Soon
 ```
 
 
-## Building and Testing
+### Building and Testing
 [[Back To Top]](#jump-to-section)
 
 I have packaged a `Makefile`, `Gruntfile` for building and testing, and `npm` scripts point to those.
@@ -162,22 +164,22 @@ Available commands are:
 - `grunt test`  (Aliases: `grunt`; `npm test`): 
   This is for unit testing. 
 
-## Legal Mambo Jambo
+### Legal Mambo Jambo
 [[Back To Top]](#jump-to-section)
 
 Copyright © 2013 aponxi <aponxi@weaponxi.com>
 
 This software is licensed under [MIT License](http://aponxi.mit-license.org/).
 
-## Release History
+### Release History
 [[Back To Top]](#jump-to-section)
 
 You can find [all the changelogs here](/test/changelogs).
 
-### Latest changelog is from a0.10.0.md:
+#### Latest changelog is from v0.10.0.md:
 
 #### v0.10.0 11/Feb/2014
-- A prefix. A more recent version than a0.1.0.
+- V prefix. A more recent version than v0.1.0.
 
 #### v0.1.01 05/Jun/2013
 - Added utf-8 encode/decode to prevent unicode decode errors, fixed #17
