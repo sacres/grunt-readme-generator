@@ -23,7 +23,7 @@
                                                            
                                                    
 # grunt-readme-generator 
-[![Build Status](https://secure.travis-ci.org/aponxi/grunt-readme-generator.png?branch=master)](http://travis-ci.org/aponxi/grunt-readme-generator)
+[![Build Status](https://secure.travis-ci.org/aponxi/grunt-readme-generator.svg?branch=master)](http://travis-ci.org/aponxi/grunt-readme-generator)
 
 > A grunt task to generate a dynamic readme.md from partial markdown files in readme folder. Specifically designed for GitHub projects!
 
